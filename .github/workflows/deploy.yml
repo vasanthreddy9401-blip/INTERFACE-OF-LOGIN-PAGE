@@ -5,30 +5,61 @@ on:
 
 jobs:
   deployment:
+
     runs-on: ubuntu-latest
 
     steps:
+
+      # ==========================================
+      # CODE
+      # ==========================================
+
       - name: Checkout Code
+        id: code
         uses: actions/checkout@v4
 
+
+      # ==========================================
+      # BUILD
+      # ==========================================
+
       - name: Build
+        id: build
         run: |
           echo "Building application..."
           sleep 5
           echo "Build completed"
 
+
+      # ==========================================
+      # TEST
+      # ==========================================
+
       - name: Test
+        id: test
         run: |
           echo "Running tests..."
           sleep 5
           echo "All tests passed"
 
+
+      # ==========================================
+      # DEPLOY
+      # ==========================================
+
       - name: Deploy
+        id: deploy
         run: |
           echo "Deploying application..."
           sleep 5
           echo "Application deployed successfully"
 
+
+      # ==========================================
+      # RUNNING
+      # ==========================================
+
       - name: Running
+        id: running
         run: |
           echo "Application is now running"
