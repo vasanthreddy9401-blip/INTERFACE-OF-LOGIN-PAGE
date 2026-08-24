@@ -14,9 +14,15 @@ jobs:
       # CODE
       # ==============================
 
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: Code
         id: code
-        uses: actions/checkout@v4
+        run: |
+          echo "Processing code..."
+          sleep 10
+          echo "Code processing completed successfully"
 
 
       # ==============================
@@ -27,6 +33,7 @@ jobs:
         id: build
         run: |
           echo "Building application..."
+          sleep 10
           echo "Build completed successfully"
 
 
@@ -38,6 +45,7 @@ jobs:
         id: test
         run: |
           echo "Running tests..."
+          sleep 10
           echo "All tests passed successfully"
 
 
@@ -49,6 +57,7 @@ jobs:
         id: deploy
         run: |
           echo "Deploying application..."
+          sleep 10
           echo "Application deployed successfully"
 
 
@@ -59,4 +68,6 @@ jobs:
       - name: Running
         id: running
         run: |
+          echo "Starting application..."
+          sleep 10
           echo "Application is now running"
